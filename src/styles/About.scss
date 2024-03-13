@@ -1,0 +1,63 @@
+:root{
+  --lighter-text: rgb(219, 219, 219);
+  --green: #a3e58c;
+  --coder-purple: #292d3e;
+  --purple: #9191e9;
+}
+
+#about-section {
+    background: var(--coder-purple);
+    .about-container {
+      display: flex;
+      .about-me-container{
+        width: 60%;
+        h2 {
+          font-size: 2.5rem;
+          position: relative;
+          color: var(--lighter-text);
+          letter-spacing: 2px;
+          padding-top: 5rem;
+          width: 67%;
+          margin: 0 auto;
+          font-weight: bolder;
+          
+          span {
+            color: var(--purple);
+            
+          }
+        }
+        h2::after {
+          content: "";
+          position: absolute;
+          top: 82%;
+          margin-left: 1rem;
+          width: 35%;
+          height: 3px;
+          background: var(--purple);
+        }
+        p {
+          font-size: 1rem;
+          
+          margin: 0 auto;
+          padding: 2rem 0 5rem 0;
+          max-width: 67%;
+          color: rgb(200, 200, 200);
+          font-weight: bolder;
+          line-height: 1.7;
+        }
+      }
+      .personal-img {
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          // border-radius: 50%;
+        }
+      }
+    }
+  }
+  

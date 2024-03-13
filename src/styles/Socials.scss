@@ -1,0 +1,45 @@
+.socials {
+    z-index: 100;
+    top: 65%;
+    position: absolute;
+    left: -10.5rem;
+    animation: social-links 0.5s;
+
+    ul {
+        list-style: none;
+
+        li {
+            a {
+                text-decoration: none;
+                color: #fff;
+                font-size: 1.2rem;
+                padding: 1.2rem;
+                display: block;
+                width: 200px;
+                text-align: right;
+                font-weight: bold;
+                transition: 0.3s ease;
+
+                i {
+                    padding-left: 1.5rem;
+                }
+            }
+
+            .linkedin {
+                background: var(--blue);
+            }
+
+            .github {
+                background: #2e3031;
+            }
+
+            .email {
+                background: var(--red);
+            }
+
+            a:hover {
+                transform: translate(120px, 0);
+            }
+        }
+    }
+}

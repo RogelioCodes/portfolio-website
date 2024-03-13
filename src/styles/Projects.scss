@@ -1,0 +1,165 @@
+:root{
+    --lighter-text: rgb(219, 219, 219);
+    
+    --coder-purple: #292d3e;
+    --purple: #9191e9;
+  }
+  
+#projects {
+    background: var(--coder-purple);
+    padding: 5rem 0;
+    .header {
+      h2 {
+        font-size: 2.5rem;
+        font-weight: bolder;
+        position: relative;
+        color: var(--lighter-text);
+        text-transform: capitalize;
+        letter-spacing: 2px;
+        width: 80%;
+        margin: 0 auto 1rem auto;
+        span {
+          color: var(--purple);
+        }
+      }
+      h2::after {
+        content: "";
+        position: absolute;
+        margin-left: 1rem;
+        top: 50%;
+        width: 20%;
+        height: 5px;
+        background: var(--purple);
+      }
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 75%;
+      margin: auto;
+      .card {
+        display: grid;
+        grid-template-columns: 20rem;
+        grid-template-rows: 18rem 16rem 4rem;
+        grid-template-areas: "image" "text" "buttons";
+        
+        background: var(--dark-gray);
+        text-align: center;
+        margin: 2rem;
+        transition: 0.3s ease;
+        .card-img {
+          grid-area: image;
+          border-radius: 0;
+        
+          background-size:cover;
+          background-position: center; 
+          background-repeat: no-repeat;
+          background-blend-mode:color;
+          
+        }
+        .card-text {
+          grid-area: text;
+          padding: 0.5rem ;
+        
+          
+          h2 {
+            padding: 0.5rem 0 1rem 0;
+            color: var(--lighter-text);
+            font-weight: bolder;
+          }
+          p {
+            color: var(--gray);
+            line-height: 1.6;
+          
+            margin-bottom: 0;
+           
+            
+          }
+          .made-with {
+            color: var(--gray);
+            line-height: 0.5;
+            
+           .iconify {
+            margin-right: 5px;
+           }
+            
+          }
+          
+        }
+        .card-buttons {
+          grid-area: buttons;
+          a {
+            margin-left: 0.5rem;
+            text-decoration: none;
+            padding: 8px 24px;
+            outline: none;
+            border: none;
+            color: var(--text-color);
+            background: var(--purple);
+            border-radius: 25px;
+            transition: 0.5s ease;
+           
+          }
+          a:hover {
+            background: var(--text-color);
+            color: var(--pruple);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+          }
+        }
+      }
+      .card1 {
+        background: url(../assets/images/tic-tac-toe-2.svg);
+
+      }
+      .card2 {
+        background: url(../assets/images/etch-a-sketch.svg);
+      }
+      .card3 {
+        background: url(../assets/images/js-calculator.svg);
+      }
+      .card4 {
+        background: url(../assets/images/Soundboard2.svg);
+      }
+      .card5 {
+        background: url(../assets/images/Library.svg);
+      }
+      .card6 {
+        background: url(../assets/images/virtual-bday-card.svg);
+      }
+      .card7 {
+        background: url(../images/tic-tac-toe.png);
+      }
+      .card8 {
+        background: url(../images/restaurant.png);
+      }
+      .card9 {
+        background: url(../images/library.png);
+      }
+      .card10 {
+        background: url(../images/messageboard.png);
+      }
+      .card11 {
+        background: url(../images/inventory-application.png);
+      }
+      .card12 {
+        background: url(../images/members-only.png);
+      }
+      .card13 {
+        background: url(../images/mern-blog.png);
+      }
+    }
+  }
+  
+  // reveal projects on scroll down
+  .reveal {
+    position: relative;
+    transform: translateY(5rem);
+    opacity: 0;
+    transition: 1s ease;
+  }
+  
+  .reveal.active {
+    transform: translateY(0rem);
+    opacity: 1;
+  }

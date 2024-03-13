@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+:root {
+ 
+    font-family: "Montserrat", sans-serif;
+    --red: #e44e58;
+    --dark-red: #e43956c4;
+    --blue: #0077b5;
+    --gray: rgb(170, 170, 170);
+    --dark-gray: #181a1b;
+    --dark-blue: #002333;
+    --text-color: #fff;
+    --lighter-text: rgb(219, 219, 219);
+    --card-background: #2e3031;
+    --skills-span: rgb(200, 200, 200);
+    --purple: #9191e9;
+    --skills-span: rgb(200, 200, 200);
+}
+html {
+    font-family: "Montserrat", sans-serif;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+
+body {
+    overflow-x: hidden;
+    background: var(--dark-gray);
+    font-family: "Montserrat", sans-serif;
+}
+
+.App {
+  background-color: var(--primary-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Stack the divs vertically */
+  /* color: #fff;; */
+}
+
+
+
+
+.hello {
+  min-height: 100vh;
+}
+
+
+
+.navbar-container {
+    min-width: 85vw;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1000;
+
+    .navbar {
+        .navbar-title {
+            /* margin: 0; */
+            color: var(--lighter-text);
+            font-size: 1.5em;
+            font-weight: bolder;
+            letter-spacing: 3px;
+            -webkit-transition: 0.3s ease;
+            transition: 0.3s ease;
+            /* font-size: ; */
+        }
+
+        background-color: #242424;
+        min-height: 6vh;
+        animation: nav-links 0.5s;
+
+
+        .links {
+            display: flex;
+            justify-content: space-around;
+            width: 50rem;
+            max-width: 50%;
+            min-width: 30%;
+            z-index: 1000;
+
+
+            .nav-link {
+                color: var(--lighter-text);
+                text-decoration: none;
+                letter-spacing: 2px;
+
+                font-size: 1.5em;
+                font-weight: bolder;
+
+            }
+
+            .nav-link::after {
+                content: "";
+                color: var(--text-color);
+                position: relative;
+                display: block;
+                width: 0;
+                height: 4px;
+                background: var(--purple);
+                transition: width 0.3s ease;
+            }
+
+            .nav-link:hover {
+                color: var(--text-color);
+            }
+
+            .nav-link:hover::after {
+                color: var(--text-color);
+                width: 100%;
+            }
+        }
+    }
+}
+
