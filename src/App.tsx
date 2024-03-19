@@ -9,6 +9,7 @@ import SocialsComponent from "./components/SocialsComponent.tsx";
 import AboutComponent from "./components/AboutComponent.tsx";
 import SkillsComponent from "./components/SkillsComponent.tsx";
 import ProjectsComponent from "./components/ProjectsComponent.tsx"
+import PhotographyComponent from "./components/PhotographyComponent.tsx";
 function App() {
  
 
@@ -24,6 +25,7 @@ function App() {
           <AboutComponent />
           <SkillsComponent />
           <ProjectsComponent />
+          <PhotographyComponent />
           {/* <div className="about" style={{border: "1px solid blue",}}>
         hello
         hello

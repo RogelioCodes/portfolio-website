@@ -107,13 +107,8 @@ const SkillsComponent: React.FC = () => {
                         ></span>
                     </span>
                     <br />
-                    <span
-                    >Tailwind <span
-                            className="iconify"
-                            data-icon="vscode-icons:file-type-tailwind"
-                        ></span>
-                    </span>
-                    <br />
+                    
+                  
                     <span
                     >Groovy <span
                             className="iconify"
@@ -151,12 +146,8 @@ const SkillsComponent: React.FC = () => {
                             className="iconify"
                             data-icon="vscode-icons:file-type-azure"
                             style={{ color: "#34cceb" }}></span></span>
-                    <br />
-                    <span
-                    >Heroku <span
-                            className="iconify"
-                            data-icon="bxl:heroku"
-                            style={{ color: "#ab34eb" }}></span></span>
+                    
+                   
                            
                 </div>
             </div>

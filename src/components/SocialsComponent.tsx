@@ -3,6 +3,7 @@ import '../styles/Socials.scss';
 const SocialsComponent: React.FC = () => {
     return (
         <div className="socials" id="socials">
+            
             <ul>
                 <li>
                     <a
@@ -12,8 +13,9 @@ const SocialsComponent: React.FC = () => {
                         aria-label="LinkedIn"
                         rel="noopener noreferrer"
                     >
-                        LinkedIn<i className="fi-snsuxl-linkedin"></i>
+                        LinkedIn<i className="fa-brands fa-linkedin-in icon"></i>{/*<i className="fi-snsuxl-linkedin"></i> */}
                     </a>
+                   
                 </li>
                 <li>
                     <a
@@ -23,7 +25,8 @@ const SocialsComponent: React.FC = () => {
                         aria-label="GitHub"
                         rel="noopener noreferrer"
                     >
-                        GitHub<i className="fi-snsuxl-github-alt"></i>
+                        GitHub<i className="fa-brands fa-square-github icon"></i>
+                        {/* GitHub<i className="fi-snsuxl-github-alt"></i> */}
                     </a>
                 </li>
                 <li>
@@ -34,7 +37,9 @@ const SocialsComponent: React.FC = () => {
                         aria-label="Email"
                         rel="noopener noreferrer"
                     >
-                        Email<i className="fi-xwsuxl-envelope-solid"></i>
+                        Email
+                        <i className="fa-solid fa-envelope icon"></i>
+                        {/* <i className="fi-xwsuxl-envelope-solid"></i> */}
                     </a>
                 </li>
             </ul>

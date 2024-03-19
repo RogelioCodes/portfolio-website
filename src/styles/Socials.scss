@@ -18,7 +18,7 @@
                 width: 200px;
                 text-align: right;
                 font-weight: bold;
-                transition: 0.3s ease;
+                transition: 0.4s ease;
 
                 i {
                     padding-left: 1.5rem;
@@ -31,7 +31,14 @@
 
             .github {
                 background: #2e3031;
+                
             }
+            
+            .icon {
+                
+                font-size: 2.0rem;
+            }
+
 
             .email {
                 background: var(--red);
