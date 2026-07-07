@@ -1,0 +1,232 @@
+.bonsai-case-study {
+  background: var(--background);
+  color: var(--text-primary);
+}
+
+.bonsai-editorial-hero {
+  padding: 12rem 0 7rem;
+}
+
+.bonsai-editorial-container {
+  display: grid;
+  gap: clamp(3rem, 6vw, 7rem);
+  grid-template-columns: minmax(360px, 0.8fr) minmax(420px, 1fr);
+  max-width: var(--nav-max-width);
+}
+
+.bonsai-editorial-copy {
+  align-self: end;
+  padding-bottom: 2rem;
+}
+
+.bonsai-status {
+  color: var(--text-secondary);
+  display: block;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.bonsai-editorial-copy h1 {
+  font-size: clamp(4rem, 8vw, 8rem);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 0.92;
+  margin: 0 0 2.5rem;
+}
+
+.bonsai-editorial-copy p {
+  color: var(--text-primary);
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 720px;
+}
+
+.bonsai-editorial-image {
+  margin: 0;
+}
+
+.bonsai-editorial-image img {
+  display: block;
+  height: clamp(540px, 62vw, 860px);
+  object-fit: cover;
+  width: 100%;
+}
+
+.bonsai-editorial-image figcaption {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-top: 0.9rem;
+  text-transform: uppercase;
+}
+
+.bonsai-overview {
+  padding: 4rem 0 7rem;
+}
+
+.bonsai-overview-container {
+  display: grid;
+  gap: clamp(3rem, 8vw, 9rem);
+  grid-template-columns: minmax(260px, 0.45fr) minmax(420px, 0.8fr);
+  max-width: var(--nav-max-width);
+}
+
+.bonsai-overview-note {
+  border-left: 4px solid var(--text-primary);
+  padding-left: 1.5rem;
+}
+
+.bonsai-overview-note span {
+  color: var(--text-secondary);
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+}
+
+.bonsai-overview-note p,
+.bonsai-overview-copy p {
+  color: var(--text-secondary);
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.bonsai-overview-copy h2,
+.bonsai-next h2 {
+  color: var(--text-primary);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  margin: 0 0 2rem;
+}
+
+.bonsai-overview-copy p + p {
+  margin-top: 1.5rem;
+}
+
+.bonsai-design-grid {
+  background: #ffffff;
+  padding: 7rem 0;
+}
+
+.bonsai-design-grid-container {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: var(--nav-max-width);
+}
+
+.bonsai-design-grid article {
+  background: var(--background);
+  min-height: 22rem;
+  padding: clamp(2rem, 4vw, 4rem);
+}
+
+.bonsai-design-grid span {
+  color: var(--text-secondary);
+  display: block;
+  font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 4rem;
+}
+
+.bonsai-design-grid h2 {
+  color: var(--text-primary);
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.05;
+  margin: 0 0 1.5rem;
+}
+
+.bonsai-design-grid p {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.bonsai-next {
+  padding: 7rem 0 9rem;
+}
+
+.bonsai-next-container {
+  max-width: 900px;
+}
+
+.bonsai-next ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bonsai-next li {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  color: var(--text-primary);
+  font-size: 1.45rem;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 1.2rem 0;
+}
+
+.bonsai-back-link {
+  color: var(--text-primary);
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-top: 2.5rem;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.bonsai-back-link:hover,
+.bonsai-back-link:focus-visible {
+  color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  .bonsai-editorial-hero {
+    padding: 9rem 0 5rem;
+  }
+
+  .bonsai-editorial-container,
+  .bonsai-overview-container,
+  .bonsai-design-grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .bonsai-editorial-copy {
+    padding-bottom: 0;
+  }
+
+  .bonsai-editorial-copy h1 {
+    font-size: clamp(3.25rem, 13vw, 5rem);
+  }
+
+  .bonsai-editorial-image img {
+    height: clamp(360px, 100vw, 620px);
+  }
+
+  .bonsai-overview {
+    padding-bottom: 5rem;
+  }
+
+  .bonsai-design-grid {
+    padding: 5rem 0;
+  }
+
+  .bonsai-next {
+    padding: 5rem 0 7rem;
+  }
+}

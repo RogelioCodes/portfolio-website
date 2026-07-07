@@ -1,112 +1,263 @@
+.photography-page {
+  background: var(--background);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
 
-#photography {
-    background: var(--primary-color);
-    padding: 5rem 0 ;
-    .header {
-      h2 {
-        font-size: 2.5rem;
-        font-weight: bolder;
-        position: relative;
-        color: var(--lighter-text);
-        text-transform: capitalize;
-        letter-spacing: 2px;
-        width: 80%;
-        margin: 0 auto 1rem auto;
-        span {
-          color: var(--purple);
-        }
-      }
-      h2::after {
-        content: "";
-        position: absolute;
-        margin-left: 1rem;
-        top: 50%;
-        width: 20%;
-        height: 5px;
-        background: var(--purple);
-      }
-    }
-  
-  }
-  .photography-container {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    width: 80%;
-    margin: 0 auto;
-    h3{
-      font-weight: bolder;
-    }
-    .languages {
-      span {
-        font-size: 0.9rem;
-        
-      }
-    }
-    .frameworks {
-      h3 {
-        font-size: 0.9rem;
-      }
-      span {
-        font-size: 0.9rem;
-      }
-    }
-    div {
-      
-     
-      
-      // margin: 1.5rem;
-   
-      p {
-        font-size: 4rem;
-        padding: 1rem;
-        color: var(--purple);
-      }
-      h3 {
-        color: var(--lighter-text);
-        padding-bottom: 1rem;
-      }
-      span {
-        font-size: 1rem;
-        color: var(--skills-span);
-        line-height: 2;
-        .iconify {
-          font-size: 1.2rem;
-        }
-      }
-    }
-   
+.photography-title {
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.photo-highlights {
+  align-items: center;
+  display: grid;
+  grid-template-columns: minmax(2rem, 1fr) minmax(0, 1480px) minmax(2rem, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  min-height: 108vh;
+  padding: 8rem var(--site-gutter) 1.5rem;
+}
+
+.photo-stage {
+  align-items: center;
+  display: flex;
+  grid-column: 2;
+  justify-content: center;
+  min-height: 0;
+}
+
+.photo-stage-image {
+  animation: photo-stage-reveal 420ms ease both;
+  display: block;
+  max-height: min(84vh, 980px);
+  max-width: 100%;
+  object-fit: contain;
+  width: auto;
+}
+
+@keyframes photo-stage-reveal {
+  from {
+    opacity: 0;
+    transform: scale(0.992);
   }
 
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
-  
-  .img-slider-img {
-    object-fit: contain;
+}
+
+.photo-control {
+  align-items: center;
+  align-self: center;
+  background: transparent;
+  border: 0;
+  color: var(--text-muted);
+  display: inline-flex;
+  height: 3rem;
+  justify-content: center;
+  padding: 0;
+  transition: color 160ms ease, transform 160ms ease;
+  width: 3rem;
+}
+
+.photo-control:hover,
+.photo-control:focus-visible {
+  color: var(--text-primary);
+}
+
+.photo-control:focus-visible {
+  outline: 1px solid var(--text-muted);
+  outline-offset: 0.25rem;
+}
+
+.photo-control-left {
+  grid-column: 1;
+  justify-self: end;
+}
+
+.photo-control-left:hover {
+  transform: translateX(-0.15rem);
+}
+
+.photo-control-right {
+  grid-column: 3;
+  justify-self: start;
+}
+
+.photo-control-right:hover {
+  transform: translateX(0.15rem);
+}
+
+.photo-control svg {
+  height: 1.5rem;
+  stroke-width: 1.5;
+  width: 1.5rem;
+}
+
+.photo-thumbnails {
+  grid-column: 1 / -1;
+  margin-top: 2rem;
+  overflow: hidden;
+  padding: 0.25rem 0 0.75rem;
+  width: min(100%, 47.75rem);
+  justify-self: center;
+}
+
+.photo-thumbnail-track {
+  display: flex;
+  gap: 0.5rem;
+  transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+  width: max-content;
+}
+
+.photo-thumbnail {
+  aspect-ratio: 1 / 1;
+  background: transparent;
+  border: 1px solid rgba(30, 30, 30, 0.12);
+  flex: 0 0 4.5rem;
+  opacity: 0.58;
+  padding: 0;
+  transition: border-color 160ms ease, opacity 160ms ease, transform 160ms ease;
+}
+
+.photo-thumbnail:hover,
+.photo-thumbnail:focus-visible,
+.photo-thumbnail-active {
+  border-color: var(--text-primary);
+  opacity: 1;
+}
+
+.photo-thumbnail:focus-visible {
+  outline: 1px solid var(--text-muted);
+  outline-offset: 0.2rem;
+}
+
+.photo-thumbnail-active {
+  transform: translateY(-0.12rem);
+}
+
+.photo-thumbnail img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.photography-bio {
+  padding: 5rem var(--site-gutter) 8rem;
+}
+
+.photography-bio-inner {
+  align-items: center;
+  display: grid;
+  gap: clamp(2rem, 6vw, 6rem);
+  grid-template-columns: minmax(16rem, 0.8fr) minmax(0, 1fr);
+  margin: 0 auto;
+  max-width: 1120px;
+}
+
+.photography-bio-image {
+  aspect-ratio: 4 / 5;
+  display: block;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
+.photography-bio-copy {
+  max-width: 38rem;
+}
+
+.photography-bio-copy p {
+  color: var(--text-secondary);
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.photography-instagram-link {
+  color: var(--text-primary);
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 800;
+  margin-top: 2rem;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.photography-instagram-link:hover,
+.photography-instagram-link:focus-visible {
+  color: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+  .photo-highlights {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(0, 1fr) auto auto;
+    min-height: 106vh;
+    padding-top: 7.5rem;
+  }
+
+  .photo-stage {
+    grid-column: 1 / -1;
+  }
+
+  .photo-stage-image {
+    max-height: 72vh;
+  }
+
+  .photo-control {
+    margin-top: 1.5rem;
+  }
+
+  .photo-control-left {
+    grid-column: 1;
+    justify-self: end;
+  }
+
+  .photo-control-right {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .photo-thumbnails {
+    grid-column: 1 / -1;
+    margin-top: 2rem;
+    width: min(100%, 36.75rem);
+  }
+
+  .photo-thumbnail {
+    flex-basis: 4.5rem;
+  }
+
+  .photography-bio {
+    padding-top: 3.5rem;
+  }
+
+  .photography-bio-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .photography-bio-image,
+  .photography-bio-copy {
+    max-width: 38rem;
     width: 100%;
-    height: 100%;
-    display: block;
-   
-    border: 1px solid #242424;
-   
   }
-  .photo-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px; /* Adjust the gap as needed */
-    margin-top: 20px;
-    
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-stage-image {
+    animation: none;
   }
-  
-  .photo-item {
-    // background-color: #ddd; /* Just for demonstration */
-    padding: 20px;
-    text-align: center;
+
+  .photo-thumbnail-track {
+    transition: none;
   }
-  .photography-div {
-    width: 100%;
-    height: 100vh;
-  }
+}

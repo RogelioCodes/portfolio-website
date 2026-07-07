@@ -13,7 +13,7 @@ const SocialsComponent: React.FC = () => {
                         aria-label="LinkedIn"
                         rel="noopener noreferrer"
                     >
-                        LinkedIn<i className="fa-brands fa-linkedin-in icon"></i>{/*<i className="fi-snsuxl-linkedin"></i> */}
+                        LinkedIn<i className="fa-brands fa-linkedin-in icon"></i>
                     </a>
                    
                 </li>
@@ -26,7 +26,6 @@ const SocialsComponent: React.FC = () => {
                         rel="noopener noreferrer"
                     >
                         GitHub<i className="fa-brands fa-square-github icon"></i>
-                        {/* GitHub<i className="fi-snsuxl-github-alt"></i> */}
                     </a>
                 </li>
                 <li>
@@ -39,7 +38,6 @@ const SocialsComponent: React.FC = () => {
                     >
                         Email
                         <i className="fa-solid fa-envelope icon"></i>
-                        {/* <i className="fi-xwsuxl-envelope-solid"></i> */}
                     </a>
                 </li>
             </ul>

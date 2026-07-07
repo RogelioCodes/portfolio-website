@@ -3,15 +3,27 @@
   line-height: 1.5;
   font-weight: 400;
   font-family: "Montserrat", sans-serif;
-  color-scheme: light dark;
-  /* color: rgba(255, 255, 255, 0.87); */
+  color-scheme: light;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --primary-color: #242424;
- 
+
+  --background: #F0EEEB;
+  --surface: #F0EEEB;
+  --text-primary: #1e1e1e;
+  --text-secondary: #4b5563;
+  --text-muted: #6a6a6a;
+  /* --accent: #ff7707; */
+  --accent: #00bfff;
+  --accent: #02b567;
+
+  --accent: #0084ff;
+  /* --accent: #1e1e1e; */
+  --primary-color: var(--background);
+  --lighter-text: var(--text-secondary);
+  --purple: var(--accent);
 }
 
 html {
@@ -25,5 +37,6 @@ html {
 body {
   min-width: 100%;
   min-height: 100vh;
-  
+  background: var(--background);
+  color: var(--text-primary);
 }

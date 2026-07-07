@@ -1,0 +1,134 @@
+.writing-page {
+  background: var(--background);
+  color: var(--text-primary);
+}
+
+.writing-gallery {
+  padding: 8.5rem 0 8rem;
+}
+
+.writing-gallery-container {
+  max-width: var(--nav-max-width);
+}
+
+.writing-gallery-item {
+  border-top: 1px solid rgba(0, 0, 0, 0.16);
+  padding: clamp(4rem, 8vw, 8rem) 0;
+}
+
+.writing-gallery-item:first-child {
+  border-top: 0;
+  padding-top: clamp(1.5rem, 3vw, 3rem);
+}
+
+.writing-gallery-link {
+  color: inherit;
+  display: block;
+  text-decoration: none;
+}
+
+.writing-gallery-frame {
+  align-items: start;
+  display: grid;
+  gap: clamp(2rem, 5vw, 5.5rem);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.writing-gallery-item img {
+  display: block;
+  grid-column: 1 / 9;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.writing-gallery-item h2 {
+  align-self: start;
+  color: var(--text-primary);
+  font-size: clamp(2.8rem, 5.2vw, 6.2rem);
+  font-weight: 800;
+  grid-column: 9 / 13;
+  letter-spacing: 0;
+  line-height: 0.94;
+  margin: 0;
+  max-width: 10ch;
+}
+
+.writing-gallery-link:hover h2,
+.writing-gallery-link:focus-visible h2 {
+  text-decoration: underline;
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.12em;
+}
+
+.writing-gallery-item--feature img {
+  grid-column: 1 / 8;
+}
+
+.writing-gallery-item--feature h2 {
+  font-size: clamp(3.4rem, 6vw, 7.4rem);
+  grid-column: 8 / 13;
+  max-width: 9ch;
+}
+
+.writing-gallery-item--portrait .writing-gallery-frame {
+  align-items: center;
+}
+
+.writing-gallery-item--portrait img {
+  grid-column: 6 / 13;
+  height: min(86vh, 980px);
+  justify-self: end;
+  width: auto;
+}
+
+.writing-gallery-item--portrait h2 {
+  font-size: clamp(3.2rem, 6vw, 7rem);
+  grid-column: 1 / 6;
+  grid-row: 1;
+  max-width: 10ch;
+}
+
+.writing-gallery-item--reverse img {
+  grid-column: 5 / 13;
+}
+
+.writing-gallery-item--reverse h2 {
+  grid-column: 1 / 5;
+  grid-row: 1;
+}
+
+@media (max-width: 980px) {
+  .writing-gallery {
+    padding-top: 7rem;
+  }
+
+  .writing-gallery-frame,
+  .writing-gallery-item--portrait .writing-gallery-frame {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  .writing-gallery-item img,
+  .writing-gallery-item--feature img,
+  .writing-gallery-item--portrait img,
+  .writing-gallery-item--reverse img {
+    grid-column: 1;
+    grid-row: auto;
+    height: auto;
+    justify-self: start;
+    width: 100%;
+  }
+
+  .writing-gallery-item h2,
+  .writing-gallery-item--feature h2,
+  .writing-gallery-item--portrait h2,
+  .writing-gallery-item--reverse h2 {
+    font-size: clamp(2.7rem, 12vw, 5rem);
+    grid-column: 1;
+    grid-row: auto;
+    max-width: 11ch;
+  }
+}

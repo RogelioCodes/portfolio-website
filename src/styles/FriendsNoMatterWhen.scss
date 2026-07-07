@@ -1,0 +1,82 @@
+.friends-post {
+  background: #101010;
+  color: #f3efe8;
+  min-height: 100vh;
+}
+
+.friends-post-hero {
+  padding: 12rem 0 6rem;
+}
+
+.friends-post-hero-container {
+  display: grid;
+  gap: clamp(3rem, 6vw, 6rem);
+  grid-template-columns: 1fr;
+  max-width: var(--nav-max-width);
+}
+
+.friends-post-hero h1 {
+  color: #f3efe8;
+  font-size: clamp(3.5rem, 7.5vw, 7.8rem);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 0.94;
+  margin: 0;
+  max-width: 900px;
+  text-transform: lowercase;
+}
+
+.friends-post-image {
+  margin: 0;
+}
+
+.friends-post-image img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.friends-post-body {
+  padding: 3rem 0 9rem;
+}
+
+.friends-post-body-container {
+  max-width: 980px;
+}
+
+.friends-post-body p {
+  color: rgba(243, 239, 232, 0.72);
+  font-size: clamp(1rem, 1.2vw, 1.18rem);
+  font-weight: 500;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.friends-post-body p + p {
+  margin-top: 1rem;
+}
+
+.friends-post-back-link {
+  color: #f3efe8;
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-top: clamp(4rem, 7vw, 7rem);
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.friends-post-back-link:hover,
+.friends-post-back-link:focus-visible {
+  color: rgba(243, 239, 232, 0.64);
+}
+
+@media (max-width: 900px) {
+  .friends-post-hero {
+    padding: 9rem 0 4rem;
+  }
+
+  .friends-post-hero h1 {
+    font-size: clamp(3rem, 13vw, 5rem);
+  }
+}
