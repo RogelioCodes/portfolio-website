@@ -896,20 +896,48 @@
   .case-study-pipeline {
     grid-template-columns: 1fr;
     min-height: auto;
+    padding: 1.5rem 1rem 1rem;
   }
 
   .case-study-pipeline::before {
-    bottom: 3rem;
-    height: auto;
-    left: 50%;
-    right: auto;
-    top: 3rem;
-    transform: translateX(-50%);
-    width: 1px;
+    display: none;
   }
 
   .case-study-pipeline div {
-    min-height: 6rem;
+    min-height: auto;
+    padding: 1.75rem 1.25rem 2rem;
+    position: relative;
+    text-align: left;
+  }
+
+  .case-study-pipeline div::before {
+    background: var(--accent);
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 0.75rem;
+    margin: 0 auto 1rem;
+    width: 0.75rem;
+  }
+
+  .case-study-pipeline div:first-child::before {
+    display: none;
+  }
+
+  .case-study-pipeline div::after {
+    background: rgba(0, 0, 0, 0.12);
+    content: "";
+    display: block;
+    height: 2rem;
+    left: 50%;
+    position: absolute;
+    top: calc(100% - 0.5rem);
+    transform: translateX(-50%);
+    width: 2px;
+  }
+
+  .case-study-pipeline div:last-child::after {
+    display: none;
   }
 
   .case-study-arrow {

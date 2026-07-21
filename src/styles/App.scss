@@ -37,6 +37,7 @@ html {
 
 body {
     overflow-x: hidden;
+    overflow-y: auto;
     background: var(--background);
     font-family: "Montserrat", sans-serif;
 }
@@ -180,6 +181,27 @@ section[id] {
             .nav-link:hover::after {
                 width: 100%;
             }
+
+            @media (max-width: 768px) {
+                .nav-link,
+                .nav-link:link,
+                .nav-link:visited,
+                .nav-link:focus,
+                .nav-link:focus-visible,
+                .nav-link:hover,
+                .nav-link:active {
+                    text-decoration: none !important;
+                    text-decoration-color: transparent !important;
+                    outline: none !important;
+                }
+
+                .nav-link::after,
+                .nav-link:active::after,
+                .nav-link:focus::after,
+                .nav-link:focus-visible::after {
+                    width: 0 !important;
+                }
+            }
         }
     }
 }
@@ -191,5 +213,164 @@ section[id] {
     margin: 0 auto;
     padding-left: var(--site-gutter);
     padding-right: var(--site-gutter);
+}
+
+@media (max-width: 768px) {
+    .navbar-container {
+        min-width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: var(--background);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        padding: 0.5rem 0.75rem;
+    }
+
+    .navbar {
+        padding: 0;
+    }
+
+    .navbar .navbar-logo {
+        height: 2.4rem;
+    }
+
+    .navbar .navbar-brand {
+        padding-right: 0.75rem;
+    }
+
+    /* hide any primary-links helper, but allow the collapsed .links to be controlled by Bootstrap */
+    .navbar .primary-links {
+        display: none !important;
+    }
+
+    .navbar .navbar-toggler {
+        display: inline-flex;
+        margin-left: 0.75rem;
+    }
+
+    .navbar .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='black' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    /* Allow Bootstrap collapse to control visibility on mobile; don't force it open here */
+
+    .navbar-nav {
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
+        align-items: flex-end;
+        text-align: right;
+    }
+
+    .navbar-nav .nav-link {
+        color: var(--text-primary);
+        font-size: 0.95rem;
+        font-weight: 500;
+        letter-spacing: 0;
+    }
+}
+
+/* Remove duplicate bottom borders on mobile (prevent two lines under navbar) */
+@media (max-width: 768px) {
+    .navbar-container,
+    .navbar {
+        border-bottom: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Keep the collapse container clean */
+    .navbar-collapse {
+        border-bottom: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+    }
+}
+
+/* Remove the white focus/border around the hamburger toggler and collapse container */
+.navbar .navbar-toggler,
+.navbar .navbar-toggler:focus,
+.navbar .navbar-toggler:active,
+.navbar .navbar-toggler:focus-visible {
+    border: none;
+    box-shadow: none;
+    outline: none;
+    background: transparent;
+}
+
+.navbar-collapse,
+.navbar-collapse.collapse,
+.navbar.collapse.show {
+    border: none;
+    box-shadow: none;
+    background: transparent;
+}
+
+/* Links should use the accent color when clicked/focused/active. Keep the toggler color unchanged. */
+.navbar-nav .nav-link:active,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:focus-visible,
+.navbar-nav .nav-link.active {
+    color: var(--accent);
+}
+
+/* Small transition for color change */
+.navbar-nav .nav-link {
+    transition: color 120ms ease;
+}
+
+/* Remove underline on nav links (including when clicked/focused) and ensure accent color applies */
+.navbar-nav .nav-link,
+.navbar-nav .nav-link:active,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:focus-visible,
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    text-decoration: none !important;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.navbar-nav .nav-link:active,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:focus-visible,
+.navbar-nav .nav-link.active {
+    color: var(--accent) !important;
+}
+
+/* Prevent mobile browser tap underline or highlight */
+@media (max-width: 768px) {
+    .navbar-nav .nav-link,
+    .navbar-nav .nav-link:active,
+    .navbar-nav .nav-link:focus,
+    .navbar-nav .nav-link:focus-visible {
+        text-decoration: none !important;
+        outline: none !important;
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+/* JS click class for touch devices to briefly show accent without underline */
+.navbar .links .nav-link.js-clicked {
+    color: var(--accent) !important;
+    text-decoration: none !important;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Desktop navigation uses the underline as its only interaction feedback. */
+@media (min-width: 769px) {
+    .navbar:not(.navbar-dark-page) .links .nav-link:active,
+    .navbar:not(.navbar-dark-page) .links .nav-link:focus,
+    .navbar:not(.navbar-dark-page) .links .nav-link:focus-visible,
+    .navbar:not(.navbar-dark-page) .links .nav-link.active {
+        color: var(--text-primary) !important;
+    }
+
+    .navbar.navbar-dark-page .links .nav-link:active,
+    .navbar.navbar-dark-page .links .nav-link:focus,
+    .navbar.navbar-dark-page .links .nav-link:focus-visible,
+    .navbar.navbar-dark-page .links .nav-link.active {
+        color: #f3efe8 !important;
+    }
 }
 

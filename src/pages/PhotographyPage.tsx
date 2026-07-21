@@ -1,5 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import '../styles/Photography.scss';
 
 const photographyBioPhoto = '/photography/highlights/web/mom_and_dad.jpg';
@@ -90,6 +91,44 @@ const PhotographyPage: React.FC = () => {
     setActiveIndex((current) => (current === highlights.length - 1 ? 0 : current + 1));
   };
 
+  const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
+
+  const onTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    const touch = event.touches[0];
+    touchStartX.current = touch.clientX;
+    touchStartY.current = touch.clientY;
+  };
+
+  const onTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (touchStartX.current === null || touchStartY.current === null) return;
+
+    const touch = event.touches[0];
+    const deltaX = touch.clientX - touchStartX.current;
+    const deltaY = touch.clientY - touchStartY.current;
+
+    // only handle primarily horizontal swipes
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 25) {
+      event.preventDefault();
+    }
+  };
+
+  const onTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (touchStartX.current === null || touchStartY.current === null) return;
+
+    const touch = event.changedTouches[0];
+    const deltaX = touch.clientX - touchStartX.current;
+    const deltaY = touch.clientY - touchStartY.current;
+
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 40) {
+      if (deltaX < 0) showNext();
+      else showPrevious();
+    }
+
+    touchStartX.current = null;
+    touchStartY.current = null;
+  };
+
   return (
     <main className="photography-page">
       <h1 className="photography-title">Photography</h1>
@@ -104,7 +143,12 @@ const PhotographyPage: React.FC = () => {
           <ChevronLeft aria-hidden="true" />
         </button>
 
-        <div className="photo-stage">
+        <div
+          className="photo-stage"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
           <img
             key={activePhoto.src}
             src={activePhoto.src}
@@ -186,6 +230,13 @@ const PhotographyPage: React.FC = () => {
             >
               Instagram
             </a>
+            <Link className="photography-inquiry-link" to="/work-with-me?type=photography">
+              Inquire about photography
+            </Link>
+            <p className="photography-location">
+              Based in Oakland, California. Available throughout the Bay Area and for select
+              travel projects; travel fees may apply.
+            </p>
           </div>
         </div>
       </section>

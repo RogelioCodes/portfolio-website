@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/Hello.scss';
 import { Lightbulb } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const HelloComponent: React.FC = () => {
   const [lightMode, setLightMode] = useState(true);
@@ -31,6 +32,11 @@ const HelloComponent: React.FC = () => {
               Feel free to{' '}
               <a href="mailto:rogelio.bolo.cordova@gmail.com">email me</a>, or
               find me around the internet.
+            </p>
+
+            <p className="hello-project-note">
+              Have a photography or web project in mind?{' '}
+              <Link to="/work-with-me">Send a project inquiry</Link>.
             </p>
 
             <div className="hello-lights-row">

@@ -15,6 +15,16 @@ const FooterComponent: React.FC = () => {
     html.style.scrollBehavior = previousScrollBehavior;
   };
 
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    scrollToTop();
+    const el = e.currentTarget as HTMLElement;
+    // add a short-lived class so the link turns accent briefly
+    el.classList.add('js-clicked');
+    window.setTimeout(() => el.classList.remove('js-clicked'), 200);
+    // blur immediately to avoid mobile keeping it focused
+    el.blur();
+  };
+
   return (
     <footer className={`site-footer ${isDarkPage ? 'site-footer-dark' : ''}`}>
       <div className="container site-footer-container">
@@ -23,13 +33,14 @@ const FooterComponent: React.FC = () => {
             <img src={me} alt="" aria-hidden="true" loading="lazy" />
           </Link>
           <nav aria-label="Footer">
-            <Link to="/" onClick={scrollToTop}>Home</Link>
-            <Link to="/engineering" onClick={scrollToTop}>Engineering</Link>
-            <Link to="/photography" onClick={scrollToTop}>Photography</Link>
-            <Link to="/writing" onClick={scrollToTop}>Writing</Link>
-            <Link to="/about" onClick={scrollToTop}>About</Link>
-            <Link to="/hello" onClick={scrollToTop}>Hello</Link>
+            <Link to="/engineering" onClick={handleLinkClick}>Engineering</Link>
+            <Link to="/photography" onClick={handleLinkClick}>Photography</Link>
+            <Link to="/writing" onClick={handleLinkClick}>Writing</Link>
+            <Link to="/about" onClick={handleLinkClick}>About</Link>
+            <Link to="/work-with-me" onClick={handleLinkClick}>Inquire</Link>
+            <Link to="/hello" onClick={handleLinkClick}>Hello</Link>
           </nav>
+          <p className="site-footer-location">Based in Oakland, California</p>
         </div>
       </div>
     </footer>

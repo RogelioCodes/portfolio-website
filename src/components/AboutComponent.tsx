@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/About.scss';
-import me from '../assets/images/Untitled-2.svg';
 import capabilitiesPhoto from '../assets/images/selfie.jpg';
 import joshuaTreeViews from '../assets/images/joshua_tree_views.jpg';
 import contactPhoto from '../assets/images/mail.jpg'
+
+const aboutPortrait = '/photography/highlights/web/selfie.png';
 
 const AboutComponent: React.FC = () => {
   return (
@@ -15,18 +17,40 @@ const AboutComponent: React.FC = () => {
               About Me
             </h2>
             <div className="about-text">
-              <p>Hey there, it's great to see you today.</p>
-              <p>I'm Rogelio - a software engineer interested in building reliable systems, thoughtful tools, and data infrastructure that helps people make better decisions.</p>
-              <p>Recently, I worked on firmware observability and telemetry systems at Lytx, helping teams understand device behavior across hundreds of thousands of connected devices. Before that, I built infrastructure automation and internal platforms at Viasat, making complex storage and cloud workflows faster and easier to use.</p>
-              <p>Outside of work, I'm into photography, surfing, climbing, and exploring creative ways to move data across the digital world.</p>
+              <p>Hey there, it&rsquo;s great to see you today.</p>
+              <p>
+                I&rsquo;m Rogelio—a software engineer, photographer, and freelance web developer
+                based in Oakland, California. My work moves between systems, images, and websites,
+                driven by the same impulse: to pay close attention, make complicated things easier
+                to understand, and create something useful that lasts.
+              </p>
+              <p>
+                As an engineer, I&rsquo;ve built firmware observability and telemetry systems at Lytx,
+                helping teams understand hundreds of thousands of connected devices. Before that,
+                I developed infrastructure automation and internal platforms at Viasat, simplifying
+                complex storage and cloud workflows.
+              </p>
+              <p>
+                Photography gives me another way to practice that attention. I&rsquo;m drawn to the
+                people, places, and small moments that are easy to overlook and impossible to
+                recreate. I photograph events, portraits, and local businesses with the goal of
+                making honest images people will want to return to.
+              </p>
+              <p>
+                My freelance work brings those worlds together. I help people and local businesses
+                document what they do and build thoughtful websites that give that work a home—
+                sometimes through photography, sometimes through development, and sometimes through
+                both.
+              </p>
+              <p>
+                Outside of work, I&rsquo;m usually surfing, climbing, or carrying a camera.
+              </p>
             </div>
           </div>
           <div className="personal-img">
             <img
-              src={me}
-              height="560px"
-              width="630px"
-              alt="guy with laptop on a desk"
+              src={aboutPortrait}
+              alt="Rogelio pictured on the screen of a compact camera"
               loading="lazy"
             />
           </div>
@@ -43,7 +67,8 @@ const AboutComponent: React.FC = () => {
               <li>Observability systems</li>
               <li>Internal tools</li>
               <li>Cloud automation</li>
-              <li>Photography</li>
+              <li>Web design &amp; development</li>
+              <li>Event &amp; business photography</li>
             </ul>
           </div>
 
@@ -105,6 +130,9 @@ const AboutComponent: React.FC = () => {
                 >
                   Instagram
                 </a>
+              </li>
+              <li>
+                <Link to="/work-with-me">Project inquiry</Link>
               </li>
             </ul>
           </div>

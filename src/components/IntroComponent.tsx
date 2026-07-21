@@ -22,7 +22,12 @@ const IntroComponent: React.FC = () => {
 
   return (
     <div className="intro" id="home">
-      <h1 className="h1">Hello, I'm a <span className="animate" ref={el}></span></h1>
+      <h1 className="intro-title">
+        <span className="intro-title-text">Hello, I'm a </span>
+        <span className="intro-title-animate">
+          <span className="animate" ref={el}></span>
+        </span>
+      </h1>
       <p className="introSubtext">
         Software Engineer with a passion for data infrastructure, observability, and building tools that make complex systems easier to understand.
       </p>

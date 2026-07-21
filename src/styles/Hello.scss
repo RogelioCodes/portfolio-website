@@ -156,6 +156,22 @@ body.hello-route-light .navbar-container .navbar .links .nav-link:focus-visible 
   color: var(--text-primary);
 }
 
+@media (min-width: 769px) {
+  body.hello-route .navbar-container .navbar .links .nav-link:active,
+  body.hello-route .navbar-container .navbar .links .nav-link:focus,
+  body.hello-route .navbar-container .navbar .links .nav-link:focus-visible,
+  body.hello-route .navbar-container .navbar .links .nav-link.active {
+    color: #f5f5f5 !important;
+  }
+
+  body.hello-route-light .navbar-container .navbar .links .nav-link:active,
+  body.hello-route-light .navbar-container .navbar .links .nav-link:focus,
+  body.hello-route-light .navbar-container .navbar .links .nav-link:focus-visible,
+  body.hello-route-light .navbar-container .navbar .links .nav-link.active {
+    color: var(--text-primary) !important;
+  }
+}
+
 body.hello-route .navbar-container .navbar .navbar-logo {
   filter: invert(1) brightness(1.3);
 }

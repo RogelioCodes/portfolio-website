@@ -1,28 +1,64 @@
 .intro {
-    /* Center vertically */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     min-width: 100%;
-    min-height: 200px;
     min-height: 100vh;
     background: var(--background);
     position: relative;
+    text-align: center;
+    padding: 0 1rem;
 }
 
-.intro h1 {
-    font-weight: bolder;
-    font-size: calc(1.2rem + 3.2vw);
+@media (max-width: 1024px) {
+    .intro {
+        padding-top: 6rem;
+    }
+}
+
+.intro-title {
+    margin: 0;
+    line-height: 1.05;
+    font-weight: 800;
+    font-size: clamp(3rem, 4vw, 6rem);
     color: var(--text-primary);
+    display: inline-flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    text-align: center;
 }
 
-.introSubtext {
-    font-size: 0.7rem;
+.intro-title-text {
+    white-space: pre;
+}
+
+.intro-title-animate {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .animate {
     color: var(--accent);
+    display: inline-flex;
+}
+
+.typed-cursor {
+    display: inline-block;
+    margin-left: 0.1rem;
+    font-weight: 800;
+    opacity: 1;
+    animation: typed-cursor-blink 1s step-start infinite;
+    vertical-align: bottom;
+}
+
+@keyframes typed-cursor-blink {
+    50% {
+        opacity: 0;
+    }
 }
 
 .introSubtext {
@@ -31,6 +67,48 @@
     font-size: calc(14px + 0.5vw);
     text-align: center;
     width: 50vw;
-    margin: 0 auto;
+    margin: 1.75rem auto 0;
     padding: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .intro {
+        min-height: calc(100vh - 5.5rem);
+        padding: 5.5rem 1rem 2.5rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .intro-title,
+    .intro-type {
+        font-size: clamp(1.75rem, 6vw, 2.8rem);
+    }
+
+    .intro-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        width: 100%;
+        max-width: 42rem;
+    }
+
+    .intro-title-text,
+    .intro-title-animate {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .intro-title-text {
+        white-space: normal;
+    }
+
+    .introSubtext {
+        width: min(90vw, 34rem);
+        margin: 1.25rem auto 0;
+        font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+        line-height: 1.9;
+        padding: 0;
+    }
 }

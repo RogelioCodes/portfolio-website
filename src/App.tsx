@@ -4,7 +4,7 @@ import NavbarComp from "./components/NavbarComponent";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './styles/App.scss'
 import IntroComponent from './components/IntroComponent.tsx'
-import SocialsComponent from "./components/SocialsComponent.tsx";
+// import SocialsComponent from "./components/SocialsComponent.tsx";
 import AboutPage from './pages/AboutPage';
 import FooterComponent from './components/FooterComponent';
 import EngineeringPage from './pages/EngineeringPage';
@@ -17,6 +17,7 @@ import WritingPage from './pages/WritingPage';
 import FriendsNoMatterWhenPage from './pages/FriendsNoMatterWhenPage';
 import PhotosMissedPage from './pages/PhotosMissedPage';
 import SlideIntoDmsPage from './pages/SlideIntoDmsPage';
+import WorkWithMePage from './pages/WorkWithMePage';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useLayoutEffect } from 'react';
 
@@ -50,7 +51,7 @@ function App() {
           <Route path="/" element={
             <>
               <IntroComponent />
-              <SocialsComponent />
+              {/* <SocialsComponent /> */}
             </>
           } />
           <Route path="/engineering" element={<EngineeringPage />} />
@@ -64,6 +65,7 @@ function App() {
           <Route path="/writing/the-photos-i-would-have-missed" element={<PhotosMissedPage />} />
           <Route path="/writing/slide-into-the-dms" element={<SlideIntoDmsPage />} />
           <Route path="/hello" element={<HelloPage />} />
+          <Route path="/work-with-me" element={<WorkWithMePage />} />
         </Routes>
 
         <FooterComponent />

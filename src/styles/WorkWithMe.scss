@@ -1,0 +1,249 @@
+.work-page {
+  background: var(--background);
+  color: var(--text-primary);
+  min-height: 100vh;
+  padding: clamp(9rem, 14vw, 13rem) var(--site-gutter) clamp(6rem, 10vw, 10rem);
+}
+
+.work-intro,
+.work-form-section {
+  margin: 0 auto;
+  max-width: 1120px;
+}
+
+.work-intro {
+  max-width: 1120px;
+}
+
+.work-eyebrow {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+
+.work-intro h1 {
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 0.95;
+  margin: 0;
+}
+
+.work-intro .work-summary {
+  color: var(--text-secondary);
+  font-size: clamp(1.15rem, 2vw, 1.6rem);
+  line-height: 1.6;
+  margin: 2rem 0 0;
+  max-width: 760px;
+}
+
+.work-intro .work-location {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-top: 1.25rem;
+}
+
+.work-form-section {
+  align-items: start;
+  display: grid;
+  gap: clamp(3rem, 7vw, 7rem);
+  grid-template-columns: minmax(0, 1fr) 15rem;
+  margin-top: clamp(4rem, 8vw, 7rem);
+}
+
+.work-form,
+.work-form label {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.work-form {
+  gap: 1.6rem;
+}
+
+.work-honeypot {
+  height: 1px !important;
+  left: -10000px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  width: 1px !important;
+}
+
+.work-form label,
+.work-type-fieldset legend {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.work-form label > span {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.work-form input[type='text'],
+.work-form input[type='email'],
+.work-form input[type='url'],
+.work-form textarea {
+  background: rgba(255, 255, 255, 0.44);
+  border: 1px solid rgba(30, 30, 30, 0.32);
+  border-radius: 0;
+  color: var(--text-primary);
+  font: inherit;
+  padding: 1rem;
+  width: 100%;
+}
+
+.work-form input:focus,
+.work-form textarea:focus {
+  border-color: var(--text-primary);
+  outline: 2px solid transparent;
+}
+
+.work-field-row {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.work-type-fieldset {
+  border: 0;
+  margin: 0 0 0.5rem;
+  padding: 0;
+}
+
+.work-type-fieldset legend {
+  margin-bottom: 1rem;
+}
+
+.work-type-options {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.work-type-options label {
+  border: 1px solid rgba(30, 30, 30, 0.25);
+  cursor: pointer;
+  display: block;
+  padding: 1rem;
+  transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.work-type-options label.is-selected {
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+  color: var(--background);
+}
+
+.work-type-options label.is-selected span {
+  color: #f7f5f1;
+}
+
+.work-type-options input {
+  height: 1px;
+  opacity: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.work-submit-row {
+  align-items: center;
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.work-submit-row button {
+  background: var(--text-primary);
+  border: 1px solid var(--text-primary);
+  color: var(--background);
+  flex: 0 0 auto;
+  font: inherit;
+  font-weight: 800;
+  padding: 1rem 1.25rem;
+}
+
+.work-submit-row button:hover,
+.work-submit-row button:focus-visible {
+  background: transparent;
+  color: var(--text-primary);
+}
+
+.work-submit-row button:disabled {
+  cursor: wait;
+  opacity: 0.62;
+}
+
+.work-submit-row p,
+.work-aside p {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.work-submit-row a,
+.work-aside a {
+  color: var(--text-primary);
+  font-weight: 800;
+}
+
+.work-form-status {
+  min-height: 1.5rem;
+}
+
+.work-form-status p {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.work-form-status a {
+  color: inherit;
+}
+
+.work-aside {
+  border-top: 1px solid rgba(30, 30, 30, 0.25);
+  padding-top: 1.25rem;
+}
+
+.work-aside .work-aside-label {
+  color: var(--text-primary);
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+}
+
+.work-aside a {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .work-aside a:hover,
+  .work-aside a:focus-visible {
+    color: var(--accent);
+  }
+}
+
+@media (max-width: 760px) {
+  .work-form-section,
+  .work-field-row,
+  .work-type-options {
+    grid-template-columns: 1fr;
+  }
+
+  .work-submit-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

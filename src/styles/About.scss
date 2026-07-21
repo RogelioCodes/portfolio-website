@@ -4,24 +4,26 @@
   scroll-margin-top: 2rem;
 
   .about-container {
-    display: flex;
+    align-items: start;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
     max-width: var(--nav-max-width);
     width: 100%;
-    padding-top: 4rem;
-    gap: clamp(15.5rem, 8vw, 8rem);
+    padding-top: clamp(8rem, 11vw, 11rem);
+    padding-bottom: clamp(5rem, 8vw, 8rem);
+    gap: clamp(3rem, 7vw, 8rem);
 
     /* Match the navbar row so the page title aligns with the brand. */
 
     .about-me-container {
-      flex: 0 0 45%;
-      max-width: 560px;
-      padding: 6rem 0;
+      max-width: 640px;
+      padding: 0;
 
       h2 {
-        font-size: 2.5rem;
+        font-size: clamp(2.5rem, 4vw, 4.5rem);
         position: relative;
         color: var(--text-primary);
-        letter-spacing: 2px;
+        letter-spacing: -0.04em;
         padding-top: 0;
         width: auto;
         margin: 0;
@@ -44,33 +46,39 @@
 
       .about-text {
         margin: 0;
-        padding: 2rem 0;
+        padding: 2rem 0 0;
         display: flex;
         flex-direction: column;
-        gap: 1.2rem;
-        max-width: 520px;
+        gap: 1rem;
+        max-width: 620px;
       }
 
       .about-text p {
-        font-size: 1.5rem;
+        font-size: clamp(1rem, 1.15vw, 1.1rem);
         margin: 0;
         color: var(--text-primary);
         font-weight: 500;
-        line-height: 1.7;
+        line-height: 1.65;
+      }
+
+      .about-text p:first-child {
+        font-size: clamp(1.15rem, 1.4vw, 1.3rem);
+        font-weight: 700;
       }
 
     }
 
     .personal-img {
-      flex: 0 0 55%;
+      align-self: center;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
+      padding-top: 0;
 
       img {
         display: block;
         width: 100%;
-        max-width: 640px;
+        max-width: 600px;
         height: auto;
       }
     }
@@ -260,7 +268,7 @@
 @media (max-width: 900px) {
   #about-section {
     .about-container {
-      flex-direction: column;
+      grid-template-columns: 1fr;
       gap: 2rem;
 
       .about-me-container {
@@ -271,6 +279,7 @@
 
       .personal-img {
         flex: 1 1 auto;
+        align-self: start;
       }
     }
   }
